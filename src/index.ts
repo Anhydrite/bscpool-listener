@@ -1,4 +1,4 @@
 /** INDEX **/
-import { makeSnapshot } from "./snapshot";
+import poolListener from "./pool-listener";
 
-makeSnapshot();
+poolListener.start();
