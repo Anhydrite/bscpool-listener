@@ -42,3 +42,7 @@ https://youtu.be/bKWCdBi_vx8
 https://github.com/jklepatch/eattheblocks/blob/master/screencast/348-pancakeswap-trading-bot/bot.js
 https://github.com/ethers-io/ethers.js/
 https://docs.ethers.io/v5/
+
+# Bibliothèques JavaScript/TypeScript
+
+- `typescript-is` : https://github.com/woutervh-/typescript-is

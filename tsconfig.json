@@ -4,7 +4,10 @@
         "target": "es6",
         "strict": true,
         "moduleResolution": "node",
-        "module": "commonjs"
+        "module": "commonjs",
+        "plugins": [
+            { "transform": "typescript-is/lib/transform-inline/transformer" }
+        ]
     },
     "include": [
         "src/**/*"
