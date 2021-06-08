@@ -1,4 +1,5 @@
 import { ethers } from "ethers"
+import socketIO from './socket';
 
 interface IAddresse {
     [key:string] : string
@@ -58,15 +59,27 @@ class PoolListener {
         let token0Name: string = await this.getName(token0);
         let token1Name: string = await this.getName(token1);
 
-        console.log(`
-        New pair detected
-        =================
-        token0: ${token0}
-            name: ${token0Name}
-        token1: ${token1}
-            name: ${token1Name}
-        pairAddress: ${pairAdress}   
-        `);
+        const string: String = `
+        New pair detected\n
+        token0: ${token0}\n
+            \tname: ${token0Name}\n
+        token1: ${token1}\n
+            \tname: ${token1Name}\n
+        pairAddress: ${pairAdress}\n   
+        `
+
+        console.log(string);
+
+        let resJson: Object = {
+            "token0": token0,
+            "token1": token1,
+            "token0Name": token0Name,
+            "token1Name": token1Name,
+            "pairAddress": pairAdress
+        }
+        resJson = JSON.stringify(resJson);
+        
+        socketIO.emit("newPool", resJson)
     }
 
     private async getName(token: string): Promise<string> {

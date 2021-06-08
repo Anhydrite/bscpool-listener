@@ -25,6 +25,7 @@
     "jsdom": "^16.5.3",
     "mongodb": "^3.6.6",
     "node-fetch": "^2.6.1",
+    "socket.io": "^4.1.2",
     "typescript-is": "^0.18.2"
   },
   "devDependencies": {
